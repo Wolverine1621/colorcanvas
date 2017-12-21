@@ -50,6 +50,13 @@ function generateRGB() {
   return "rgb(" + color.r + "," + color.g + "," + color.b +")";
 }
 
+function infoAlert() {
+    sweetAlert("HTML5 Color Canvas - Controls",
+                "Click to place dot\n" +
+                "Spacebar: Change background color\n" +
+                "Backspace: Clear canvas");
+}
+
 window.onresize = function() {
   c.width = window.innerWidth;
   c.height = window.innerHeight;
@@ -85,4 +92,8 @@ $(document).mousemove(function(e){
     if (globalMouseState === 1) {
       draw(e);
     }
+});
+
+$(document).ready(function(){
+    infoAlert();
 });
